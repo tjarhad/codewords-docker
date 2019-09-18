@@ -18,7 +18,7 @@ navigation:
 
 # Introduction {data-background-image="images/redPanda_background.png"}
 
-# Why Docker?
+# Why Docker? {data-background-image="images/docker_icon.png" data-background-opacity=0.8 data-background-size="400px" data-background-position="left 3em bottom 0px"}
 
 ## Problems 
 
