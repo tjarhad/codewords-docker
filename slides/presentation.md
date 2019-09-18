@@ -83,19 +83,43 @@ sudo apt-get update
 apt-cache policy docker-ce
 sudo apt-get install -y docker-ce
 sudo usermod -aG docker ${USER}
+#Logout user and Login again
+```
+
+## Hello World
+
+```bash
+docker run hello-world
 ```
 
 
 # Docker Terminology
 
-## Demo: Alphine cowsay
-
 ## 
 
-- Host: 
-- Image: 
-- Container:
+- *Image*: An image is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files.
+- *Container*: A container is a runtime instance of an image--what the image becomes in memory when executed (that is, an image with state, or a user process). You can see a list of your running containers with the command, docker ps, just as you would in Linux.
 - Registry: 
+
+## Demo: Greeting
+
+Create docker image which *cats* a file
+
+```bash
+#Build docker Image 
+docker build -t greeting .
+#List image
+docker image ls
+#List containers 
+docker container ls
+```
+
+
+::: notes
+
+Demo docker greeting image
+
+:::
 
 ## 
 
