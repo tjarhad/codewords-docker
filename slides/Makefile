@@ -12,4 +12,4 @@ build-pdf:
 	docker run -ti --rm -v $(PWD):/data -w /data  pandoc/latex -t beamer presentation.md -o presentation.pdf
 
 build-html:
-	pandoc -s -t revealjs -V theme:simple presentation.md -o presentation.html
+	pandoc -s -t revealjs -V theme:simple -V revealjs-url=https://revealjs.com presentation.md -o presentation.html

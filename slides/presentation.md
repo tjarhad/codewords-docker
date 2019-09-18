@@ -95,11 +95,12 @@ docker run hello-world
 
 # Docker Terminology
 
-## 
+## Docker Image
 
-- *Image*: An image is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files.
-- *Container*: A container is a runtime instance of an image--what the image becomes in memory when executed (that is, an image with state, or a user process). You can see a list of your running containers with the command, docker ps, just as you would in Linux.
-- Registry: 
+An image is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files.
+
+## Docker Container
+A container is a runtime instance of an image--what the image becomes in memory when executed (that is, an image with state, or a user process). You can see a list of your running containers with the command, docker ps, just as you would in Linux.
 
 ## Demo: Greeting
 
