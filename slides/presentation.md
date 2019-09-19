@@ -93,7 +93,7 @@ docker run hello-world
 ```
 
 
-# Docker Terminology
+# Docker Concepts
 
 ## Docker Image
 
@@ -130,26 +130,44 @@ Demo docker greeting image
 
 ## Dependencies
 
+- System environment : *node, python, jdk*
+- Lock all requirements : *pip_freeze, package-lock.json*
+- Extra dependencies *ca-certificates cryptography ffmpeg imagemagick*
+- Configuration files
+- User role & permissions
+
 ::: notes
 
 [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
 
 :::
 
+## Python Flask application
 
+```
+docker build --tag=friendlyhello .
+docker run -p 4000:80 friendlyhello
+```
 
+## 
+
+![Slack Time](images/docker_building.png)
 
 ## Docker build context
 
-- *.dockerignore* file
+- All recursive contents of files and directories in the current directory are sent to the Docker daemon as the build context.
+- To exclude files not relevant to the build use a *.dockerignore* file
 
-## Caching
+## Leverage build cache
 
-- Less steps
+- When building an image, Docker steps through the instructions in your Dockerfile, executing each in the order specified. As each instruction is examined, Docker looks for an existing image in its cache that it can reuse, rather than creating a new (duplicate) image.
+- Once the cache is invalidated, all subsequent Dockerfile commands generate new images and the cache is not used.
 
 ::: notes
 
 [Best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+
+Demo & Update flaskApp Dockerfile
 
 :::
 
@@ -189,10 +207,18 @@ ARG variables are not persisted into the built image as ENV variables are. Howev
 
 ## Docker RUN
 
+- Detached (-d) or Foreground (-it)
+- Port binding (-p)
+- Volume mount (-v)
+- Clean up (--rm)
+- Workdir (-w)
+- Link (--link )
+- ENV (--env)
 
 ::: notes
 
 Host binding for volume and port
+[Docker run reference](https://docs.docker.com/engine/reference/run/)
 
 :::
 
@@ -205,11 +231,7 @@ Objective: Dockerise Reactjs app.
 - Dependency to build Reactjs App
 - How to serve build over http?
 
-## Persistance
-
 ## Code mount vs Code add
-
-## Container should be stateless
 
 ::: notes
 
