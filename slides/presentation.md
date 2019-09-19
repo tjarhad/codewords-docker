@@ -258,12 +258,24 @@ Possible Break
 
 ## 
 
+- *Services* are really just “containers in production.” A service only runs one image, but it codifies the way that image runs—what ports it should use, how many replicas of the container should run so the service has the capacity it needs, and so on. Scaling a service changes the number of container instances running that piece of software, assigning more computing resources to the service in the process.
+- A *swarm* is a group of machines that are running Docker and joined into a cluster.
 
 ::: notes
 
 [Compose file reference](https://docs.docker.com/compose/compose-file/)
 
 :::
+
+## 
+
+```
+docker swarm init
+docker stack deploy -c docker-compose.yml demo
+docker service ls
+docker service ps demo_redis  --no-trunc
+docker service|stack rm 
+```
 
 ## Address resolution
 
