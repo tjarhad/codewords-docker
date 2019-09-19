@@ -240,10 +240,28 @@ Host binding for volume and port
 
 Objective: Dockerise Reactjs app.
 
+## 
+
+```bash
+npx create-react-app react-app
+# Starts the development server.
+npm start
+# Bundles the app into static files for production.    
+npm run build 
+```
+
 ## Dockerise React App
 
 - Dependency to build Reactjs App
 - How to serve build over http?
+
+::: notes
+- Test context / Time take to build
+- Test Dockerfile steps for caching
+- Test MultiStage Build
+- Test image size
+ 
+:::
 
 ## Code mount vs Code add
 
@@ -276,6 +294,12 @@ docker service ls
 docker service ps demo_redis  --no-trunc
 docker service|stack rm 
 ```
+
+::: notes 
+
+Demo using FlaskApp compose files
+
+:::
 
 ## Address resolution
 
