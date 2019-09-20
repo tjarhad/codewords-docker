@@ -132,7 +132,7 @@ Demo docker greeting image
 
 - System environment : *node, python, jdk*
 - Lock all requirements : *pip_freeze, package-lock.json*
-- Extra dependencies *ca-certificates cryptography ffmpeg imagemagick*
+- Extra dependencies *ca-certificates, cryptography, ffmpeg, imagemagick*
 - Configuration files
 - User role & permissions
 
