@@ -3,6 +3,7 @@ title:  "Docker: A Practical Guide"
 keywords:
 - docker 
 - devops
+- Continuous Integration
 
 author:
 - Anand Tripathi
