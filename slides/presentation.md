@@ -220,17 +220,28 @@ ARG variables are not persisted into the built image as ENV variables are. Howev
 :::
 
 
-## Docker RUN
+## RUN
 
-- Detached (-d) or Foreground (-it)
-- Port binding (-p)
-- Volume mount (-v)
-- Clean up (--rm)
+
+- Detached vs Foreground
+- EXPOSE vs NO EXPOSE vs PUBLISH
+- Volume mount
+- CMD vs ENTRYPOINT
+- Clean up (\--rm)
 - Workdir (-w)
-- Link (--link )
-- ENV (--env)
+- ENV (-e) and (\--env-file)
+- [Reference of RUN](https://docs.docker.com/engine/reference/run/)
 
 ::: notes
+
+
+1. No expose - Only Accessible from inside the container
+2. Expose - Accessible from inside the container and from other containers in same network
+3. Port forwaring - mapping of host port and container port
+
+--name
+ - Four of the Dockerfile commands cannot be overridden at runtime: FROM, MAINTAINER, RUN, and ADD. Everything else has a corresponding override in docker run
+ - Override CMD of dockerfile by providing the command in docker run if entrypoint is given then cmd will act as argument to entrypoint
 
 Host binding for volume and port
 [Docker run reference](https://docs.docker.com/engine/reference/run/)
@@ -278,7 +289,6 @@ Possible Break
 ## 
 
 - *Services* are really just “containers in production.” A service only runs one image, but it codifies the way that image runs—what ports it should use, how many replicas of the container should run so the service has the capacity it needs, and so on. Scaling a service changes the number of container instances running that piece of software, assigning more computing resources to the service in the process.
-- A *swarm* is a group of machines that are running Docker and joined into a cluster.
 
 ::: notes
 
